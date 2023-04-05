@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppCRUD.ViewModel"
+             x:DataType="vm:TestViewModel"
+             x:Class="AppCRUD.MainPage">
+
+    <!-- generar un binding para interconectar el viewmodel con la vista
+    para poder vincularlo se debe primero llamar la clase con el name
+    vm es un alias-->
+    <ContentPage.BindingContext>
+        <!--con el nombre de namespace se utiliza la clase-->
+        <vm:TestViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <!--para llamar los datos con el binding se usa {}-->
+            <!--para darle contexto de como llegar se llama la propiedad x:datatype
+            -->
+            <Label Text="{Binding Text}"/>
+            <Label Text="{Binding Count}"/>
+
+            <Button Text="Cambiar texto" Command="{Binding CambiarTextCommand}"></Button>
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
