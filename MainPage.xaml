@@ -21,6 +21,7 @@
             <!--para darle contexto de como llegar se llama la propiedad x:datatype
             -->
             <Label Text="{Binding Text}"/>
+            <!--contador de clicks -->
             <Label Text="{Binding Count}"/>
 
             <Button Text="Cambiar texto" Command="{Binding CambiarTextCommand}"></Button>
